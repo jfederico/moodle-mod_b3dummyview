@@ -21,22 +21,18 @@
  * @copyright  2025 Jesus Federico <jesus@123it.ca>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 $addons = [
     "mod_b3dummyview" => [
         "handlers" => [
             "b3dummyview" => [
+                "delegate" => "CoreCourseModuleDelegate",
+                "method" => "mobile_view_activity",
                 "displaydata" => [
-                    "title" => "b3dummyview",
-                    "icon" => "$CFG->wwwroot/mod/b3dummyview/pix/icon.svg",
-                    "class" => "mod_b3dummyview_mobile_handler"
+                    "title" => "pluginname",
+                    "icon" => "$CFG->wwwroot/mod/b3dummyview/pix/icon.svg"
                 ],
-                "method" => "mobile_view",
-                "offlinefunctions" => [
-                    "mobile_view" => []
-                ]
-            ]
+            ],
         ],
-        "lang" => ["pluginname", "modulename"]
+        "lang" => ["pluginname", "modulename"],
     ]
 ];

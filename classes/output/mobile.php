@@ -32,7 +32,8 @@ class mobile {
      * @param array $args
      * @return array
      */
-    public static function mobile_view($args) {
+    public static function mobile_view_activity($args) {
+        global $OUTPUT;
         $data = [
             'message' => 'Hello Mobile from b3dummyview::renderer!'
         ];
@@ -40,12 +41,10 @@ class mobile {
             'templates' => [
                 [
                     'id' => 'main',
-                    'html' => '<ion-card><ion-card-content>{{message}}</ion-card-content></ion-card>'
-                ]
+                    'html' => $OUTPUT->render_from_template('mod_b3dummyview/mobile_view', $data),
+                ],
             ],
-            'javascript' => '',
             'otherdata' => $data,
-            'files' => []
         ];
     }
 }
